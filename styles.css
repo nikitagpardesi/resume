@@ -1,0 +1,400 @@
+:root {
+  --bg: #f4f2ea;
+  --ink: #101116;
+  --muted: #3e4049;
+  --accent: #2e7df6;
+  --accent-2: #12b3a6;
+  --card: rgba(255, 255, 255, 0.78);
+  --border: rgba(16, 17, 22, 0.12);
+  --shadow: 0 16px 34px rgba(8, 8, 16, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(46, 125, 246, 0.14), transparent 32%),
+    radial-gradient(circle at 86% 10%, rgba(18, 179, 166, 0.12), transparent 28%),
+    linear-gradient(160deg, #f8f7f3 0%, #eeece2 46%, #f6f5ee 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(to right, rgba(16, 17, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 17, 22, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.4rem;
+  margin: 0 auto;
+  max-width: 1100px;
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  text-decoration: none;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.2rem 3rem;
+}
+
+.hero {
+  padding: 3.2rem 0 2rem;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  margin: 0.9rem 0 1rem;
+  max-width: 14ch;
+}
+
+h1 span {
+  display: block;
+  color: #242734;
+  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.intro {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.button {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.15rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.button.primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.button.ghost {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 1.4rem;
+  margin-top: 1.3rem;
+}
+
+h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.35rem;
+  font-family: "Syne", sans-serif;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 0.95rem;
+  background: #fff;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.02rem;
+}
+
+.card p,
+.panel > p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Experience timeline */
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.role {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fff;
+  padding: 1.1rem 1.2rem;
+}
+
+.role-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+
+.role-head h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-family: "Syne", sans-serif;
+}
+
+.dates {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.role-meta {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.98rem;
+}
+
+.role-stack {
+  margin: 0.2rem 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+.role ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.role li {
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 0.97rem;
+}
+
+.role li::marker {
+  color: var(--accent-2);
+}
+
+/* Skills */
+.skill-group {
+  margin: 1.1rem 0 0.55rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.skill-group:first-of-type {
+  margin-top: 0.4rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chips span {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+}
+
+/* Education */
+.edu-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.edu-item {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fff;
+  padding: 1rem 1.2rem;
+}
+
+.edu-item h3 {
+  font-size: 1.02rem;
+  font-family: "Syne", sans-serif;
+}
+
+/* Links */
+.resume-links,
+.contact-links {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: #fff;
+}
+
+.contact-links a:hover {
+  border-color: var(--accent);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 560ms ease, transform 560ms ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 860px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    padding: 0.75rem 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .nav {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    font-size: 0.84rem;
+  }
+
+  main {
+    padding: 0 0.85rem 2.4rem;
+  }
+
+  .hero {
+    padding: 2.2rem 0 1.3rem;
+  }
+
+  .kicker {
+    font-size: 0.74rem;
+  }
+
+  h1 {
+    max-width: 15ch;
+  }
+
+  h1 span {
+    margin-top: 0.78rem;
+  }
+
+  .intro {
+    font-size: 0.99rem;
+    line-height: 1.56;
+  }
+
+  .panel {
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    padding: 0.66rem 1rem;
+  }
+
+  .role-head {
+    flex-direction: column;
+  }
+}
