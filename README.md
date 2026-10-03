@@ -2,7 +2,7 @@
 
 A single-page personal resume site (HTML/CSS/JS, no build step) ready to host on GitHub Pages.
 
-Live URL (after setup): `https://<your-username>.github.io/resume/`
+Live URL (after setup): `https://nikitagpardesi.github.io/resume/`
 
 ## Files
 
